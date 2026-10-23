@@ -8,7 +8,7 @@ Learning Space is a shared canvas for learning on your Mac. You write and draw b
 **Prerequisites**
 
 - macOS.
-- Learning Space installed and opened once. The first launch installs the `~/.learning-space/bin/learning-space` command that agents use to connect.
+- Learning Space opened once. No packaged app exists yet: run it from source (`github.com/Nordup/math-tutor`, branch `learning-space`, folder `space/`, `npm install && npm run dev`). The first launch installs the `~/.learning-space/bin/learning-space` command that agents use to connect.
 - Keep the app open while you work. If it is closed, the agent asks you to open it.
 
 **Install**
