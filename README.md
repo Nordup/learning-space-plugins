@@ -16,33 +16,60 @@ claude mcp remove learning-space
 codex mcp remove learning-space
 ```
 
-## Claude Code
+## Manual setup
 
-```text
-/plugin marketplace add Nordup/learning-space-plugins
-/plugin install learning-space@learning-space
+The Learning Space app installs the plugins for you: click the agent pill, then **Connect an agent**. To do it by hand, use the steps for your agent.
+
+### Claude Code
+
+Covers the terminal and the Code tab in Claude Desktop.
+
+```sh
+claude plugin marketplace add Nordup/learning-space-plugins
+claude plugin install learning-space@learning-space
 ```
 
-On Claude Code 2.1.275 or later, one command does both: `/plugin install learning-space --marketplace Nordup/learning-space-plugins`.
+Then restart Claude Code, or run `/reload-plugins`. Inside Claude Code, `/plugin marketplace add Nordup/learning-space-plugins` and `/plugin install learning-space@learning-space` do the same. On Claude Code 2.1.275 or later, one command does both: `/plugin install learning-space --marketplace Nordup/learning-space-plugins`.
 
-## Codex
+### ChatGPT and Codex
+
+The ChatGPT desktop app and Codex CLI share one setup.
 
 ```sh
 codex plugin marketplace add Nordup/learning-space-plugins
+codex plugin add learning-space@learning-space
 ```
 
-Then open `/plugins` in Codex and install **Learning Space**.
+Then restart the ChatGPT app or Codex. You can also install **Learning Space** from `/plugins` in Codex, or from Settings → Plugins in the ChatGPT app.
 
-## Cursor
+### Claude Desktop (Chat tab)
+
+1. Download [`learning-space.mcpb`](claude-extensions/learning-space/dist/learning-space.mcpb).
+2. Double-click it, or drag it into Claude Desktop.
+
+### Cursor
 
 Add the GitHub repository `Nordup/learning-space-plugins` as a plugin marketplace in Cursor. Then install **Learning Space** from it. Cursor reads `.cursor-plugin/marketplace.json`.
 
-## Claude app
+### Other agents
 
-Use one of these:
+For VS Code, Windsurf and other MCP clients. HTTP clients use the server URL; stdio clients use the relay command.
 
-- Click **Connect** in Learning Space and pick Claude.
-- Download [`learning-space.mcpb`](claude-extensions/learning-space/dist/learning-space.mcpb) and double-click it.
+- Server URL (the app must be open): `http://127.0.0.1:47821/mcp`
+- Relay command (stdio): `~/.learning-space/bin/learning-space mcp`
+
+```json
+{
+  "mcpServers": {
+    "learning-space": {
+      "command": "~/.learning-space/bin/learning-space",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
+Some clients do not expand `~`. Use the full path, for example `/Users/<you>/.learning-space/bin/learning-space`.
 
 ## Updates
 
@@ -50,7 +77,7 @@ When a new version is out:
 
 - Claude Code: `claude plugin marketplace update learning-space`, or turn on auto-update for the marketplace in `/plugin`.
 - Codex: `codex plugin marketplace upgrade`.
-- Claude app: download the new `.mcpb` and open it.
+- Claude Desktop: download the new `.mcpb` and open it.
 
 ## Develop
 
@@ -75,7 +102,7 @@ CI runs `npm run build` and `npm run check-artifact`. The second command fails w
 | Codex | `plugins/learning-space/.codex-plugin/plugin.json` | `mcp.codex.json` (HTTP) |
 | Agent Plugins | `plugins/learning-space/plugin.json` | `mcp.json` (streamable HTTP) |
 | Cursor | `plugins/learning-space/.cursor-plugin/plugin.json` | `mcp.cursor.json` (stdio relay) |
-| Claude app | `claude-extensions/learning-space/manifest.json` | relay binary |
+| Claude Desktop | `claude-extensions/learning-space/manifest.json` | relay binary |
 
 The stdio relay lists tools even when the app is closed. The HTTP wiring connects to `http://127.0.0.1:47821/mcp` and needs the app to be open.
 
