@@ -6,8 +6,9 @@ Each plugin adds the `learning-space` MCP server and a small skill that teaches 
 
 ## Before you install
 
-1. Install Learning Space (macOS).
-2. Open it once. The first launch installs `~/.learning-space/bin/learning-space`, the command that agents use to connect.
+1. Get Learning Space (macOS). No packaged app exists yet. The app runs from source: clone [`github.com/Nordup/math-tutor`](https://github.com/Nordup/math-tutor), check out the branch `learning-space`, and go to the folder `space/`.
+2. Start the app with `npm install && npm run dev`. The first launch installs `~/.learning-space/bin/learning-space`, the command that agents use to connect.
+3. Keep the app open while you work with the agent.
 
 If you already added the server by hand (`claude mcp add learning-space …` or `codex mcp add learning-space …`), remove that entry first. Otherwise the agent sees every tool twice.
 
