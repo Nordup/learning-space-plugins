@@ -1,0 +1,25 @@
+{
+  "name": "learning-space-plugins",
+  "version": "0.1.0",
+  "description": "Agent plugins that connect Claude Code, Codex, Cursor and the Claude app to Learning Space.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nordup/learning-space-plugins"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/version.mjs --check && node scripts/validate.mjs && npm run pack",
+    "validate": "node scripts/validate.mjs",
+    "pack": "node claude-extensions/learning-space/scripts/pack.mjs",
+    "version:sync": "node scripts/version.mjs && npm run pack",
+    "check-artifact": "node scripts/check-artifact.mjs"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "^2.1.2"
+  }
+}

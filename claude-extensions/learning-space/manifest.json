@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/mcpb/main/schemas/mcpb-manifest-v0.3.schema.json",
+  "manifest_version": "0.3",
+  "name": "learning-space",
+  "display_name": "Learning Space",
+  "version": "0.1.0",
+  "description": "Teach on a shared canvas: Claude sees the learner's handwriting and draws, explains and checks work in Learning Space.",
+  "author": {
+    "name": "Nordup",
+    "url": "https://github.com/Nordup"
+  },
+  "homepage": "https://github.com/Nordup/learning-space-plugins",
+  "documentation": "https://github.com/Nordup/learning-space-plugins#readme",
+  "support": "https://github.com/Nordup/learning-space-plugins/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nordup/learning-space-plugins"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "keywords": [
+    "learning-space",
+    "learning",
+    "education",
+    "tutor",
+    "canvas",
+    "whiteboard",
+    "handwriting",
+    "mcp"
+  ],
+  "server": {
+    "type": "binary",
+    "entry_point": "${HOME}/.learning-space/bin/learning-space",
+    "mcp_config": {
+      "command": "${HOME}/.learning-space/bin/learning-space",
+      "args": ["mcp"]
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin"]
+  },
+  "tools_generated": true
+}
