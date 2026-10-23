@@ -10,7 +10,12 @@
   "homepage": "https://github.com/Nordup/learning-space-plugins",
   "repository": "https://github.com/Nordup/learning-space-plugins",
   "license": "MIT",
-  "keywords": ["learning-space", "education", "canvas", "mcp"],
+  "keywords": [
+    "learning-space",
+    "education",
+    "canvas",
+    "mcp"
+  ],
   "logo": "./assets/logo.svg",
   "skills": "./skills/",
   "mcpServers": "./mcp.cursor.json"

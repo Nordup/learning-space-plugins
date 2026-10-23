@@ -27,7 +27,10 @@
     "longDescription": "Learning Space is a local desktop canvas for learning. The learner writes and draws by hand; with this plugin, Codex sees the board, places explanations and diagrams beside the learner's work, and checks each step. Codex gives hints and questions first, so the learner does the thinking. The app runs on your Mac and keeps your work in a local folder.",
     "developerName": "Nordup",
     "category": "Education",
-    "capabilities": ["Read", "Write"],
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
     "websiteURL": "https://github.com/Nordup/learning-space-plugins",
     "brandColor": "#6E8BFF",
     "composerIcon": "./assets/logo.svg",

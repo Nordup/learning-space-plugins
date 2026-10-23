@@ -33,12 +33,16 @@
     "entry_point": "${HOME}/.learning-space/bin/learning-space",
     "mcp_config": {
       "command": "${HOME}/.learning-space/bin/learning-space",
-      "args": ["mcp"]
+      "args": [
+        "mcp"
+      ]
     }
   },
   "compatibility": {
     "claude_desktop": ">=0.10.0",
-    "platforms": ["darwin"]
+    "platforms": [
+      "darwin"
+    ]
   },
   "tools_generated": true
 }
