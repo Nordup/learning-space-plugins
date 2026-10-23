@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+.DS_Store
+*.log
+
+# Build output: keep only the committed bundle
+claude-extensions/*/dist/*
+!claude-extensions/*/dist/*.mcpb
