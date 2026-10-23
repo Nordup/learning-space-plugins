@@ -1,0 +1,20 @@
+{
+  "name": "learning-space",
+  "interface": {
+    "displayName": "Learning Space"
+  },
+  "plugins": [
+    {
+      "name": "learning-space",
+      "source": {
+        "source": "local",
+        "path": "./plugins/learning-space"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    }
+  ]
+}

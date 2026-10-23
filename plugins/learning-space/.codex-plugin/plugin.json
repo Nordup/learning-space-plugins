@@ -1,0 +1,41 @@
+{
+  "name": "learning-space",
+  "version": "0.1.0",
+  "description": "Teach on a shared canvas: Codex sees the learner's handwriting and draws, explains and checks work in Learning Space.",
+  "author": {
+    "name": "Nordup",
+    "url": "https://github.com/Nordup"
+  },
+  "homepage": "https://github.com/Nordup/learning-space-plugins",
+  "repository": "https://github.com/Nordup/learning-space-plugins.git",
+  "license": "MIT",
+  "keywords": [
+    "learning-space",
+    "learning",
+    "education",
+    "tutor",
+    "canvas",
+    "whiteboard",
+    "handwriting",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.codex.json",
+  "interface": {
+    "displayName": "Learning Space",
+    "shortDescription": "Teach on a shared canvas where the learner writes by hand.",
+    "longDescription": "Learning Space is a local desktop canvas for learning. The learner writes and draws by hand; with this plugin, Codex sees the board, places explanations and diagrams beside the learner's work, and checks each step. Codex gives hints and questions first, so the learner does the thinking. The app runs on your Mac and keeps your work in a local folder.",
+    "developerName": "Nordup",
+    "category": "Education",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/Nordup/learning-space-plugins",
+    "brandColor": "#6E8BFF",
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg",
+    "defaultPrompt": [
+      "Look at my board in Learning Space and check my last step",
+      "Teach me how derivatives work on the Learning Space board, one small step at a time",
+      "Give me a hint for the problem I wrote in Learning Space, but not the answer"
+    ]
+  }
+}

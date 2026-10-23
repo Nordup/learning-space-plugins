@@ -1,0 +1,18 @@
+{
+  "name": "learning-space",
+  "owner": {
+    "name": "Nordup",
+    "url": "https://github.com/Nordup"
+  },
+  "metadata": {
+    "description": "Learning Space is a shared canvas where you write by hand and AI agents draw, explain and check your work.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "learning-space",
+      "source": "./plugins/learning-space",
+      "description": "Connect to the Learning Space desktop app over MCP, with a skill for teaching on the board."
+    }
+  ]
+}

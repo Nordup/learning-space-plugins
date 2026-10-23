@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>Learning Space</title>
+  <rect width="256" height="256" rx="56" fill="#111113"/>
+  <rect x="2" y="2" width="252" height="252" rx="54" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="4"/>
+  <g fill="#5e5e6a">
+    <circle cx="80" cy="80" r="9"/>
+    <circle cx="128" cy="80" r="9"/>
+    <circle cx="176" cy="80" r="9"/>
+    <circle cx="80" cy="128" r="9"/>
+    <circle cx="128" cy="128" r="9"/>
+    <circle cx="176" cy="128" r="9"/>
+    <circle cx="80" cy="176" r="9"/>
+    <circle cx="128" cy="176" r="9"/>
+    <circle cx="176" cy="176" r="9"/>
+  </g>
+  <path d="M60 214 C 92 210, 108 176, 130 150 S 170 92, 204 84" fill="none" stroke="#111113" stroke-width="40" stroke-linecap="round"/>
+  <path d="M60 214 C 92 210, 108 176, 130 150 S 170 92, 204 84" fill="none" stroke="#6e8bff" stroke-width="16" stroke-linecap="round"/>
+</svg>

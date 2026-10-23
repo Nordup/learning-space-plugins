@@ -1,0 +1,17 @@
+{
+  "name": "learning-space",
+  "displayName": "Learning Space",
+  "version": "0.1.0",
+  "description": "Teach on a shared canvas: Cursor sees the learner's handwriting and draws, explains and checks work in Learning Space.",
+  "author": {
+    "name": "Nordup",
+    "url": "https://github.com/Nordup"
+  },
+  "homepage": "https://github.com/Nordup/learning-space-plugins",
+  "repository": "https://github.com/Nordup/learning-space-plugins",
+  "license": "MIT",
+  "keywords": ["learning-space", "education", "canvas", "mcp"],
+  "logo": "./assets/logo.svg",
+  "skills": "./skills/",
+  "mcpServers": "./mcp.cursor.json"
+}

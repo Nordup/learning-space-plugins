@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "learning-space": {
+      "command": "${env:HOME}/.learning-space/bin/learning-space",
+      "args": ["mcp"]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "learning-space",
+  "version": "0.1.0",
+  "description": "Teach on a shared canvas: Claude sees the learner's handwriting and draws, explains and checks work in Learning Space.",
+  "author": {
+    "name": "Nordup",
+    "url": "https://github.com/Nordup"
+  },
+  "homepage": "https://github.com/Nordup/learning-space-plugins",
+  "repository": "https://github.com/Nordup/learning-space-plugins",
+  "license": "MIT",
+  "keywords": [
+    "learning-space",
+    "learning",
+    "education",
+    "tutor",
+    "canvas",
+    "whiteboard",
+    "handwriting",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.claude.json"
+}
