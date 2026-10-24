@@ -1,34 +1,13 @@
 ---
 name: learning-space
-description: Teach on the Learning Space canvas, a shared board where the learner writes by hand and the agent reads, draws and explains. Use when the learner mentions the board, the canvas, Learning Space, their handwriting or drawing, or asks to be taught or checked visually.
-when_to_use: The learner talks about the board, the canvas or Learning Space, refers to something they wrote or drew, or asks you to teach, explain or check work visually.
+description: Learning Space is a shared board where a person learns with you: they write and draw by hand, and you can see the board and draw, write and explain on it. Use it when they mention the board, the canvas or Learning Space, refer to something they wrote or drew, or want something explained, checked or shown visually.
+when_to_use: They talk about the board, the canvas or Learning Space, refer to their handwriting or drawing, or want an explanation, a check or a picture of an idea.
 ---
 
 # Learning Space
 
-Learning Space is a local desktop canvas. The learner writes and draws by hand. You see the board and add material to it through the `learning-space` MCP tools.
+Before you work on the board, read the Learning Space brief with `get_guide({topic: "brief"})`, unless it is already in your context from the learning folder's `AGENTS.md`. It explains what the space is for, how the person and you work together, and how to think about the board.
 
-## Start of a session
+If the folder has an `AGENTS.md`, it also describes the folder: plans, session notes, and what you know about the person.
 
-- Call `get_guide` once per session, before you write to the board. It explains the board conventions and the tools.
-- If the learning folder contains an `AGENTS.md`, follow it for folder conventions: the plan, session notes and memory. It takes precedence over this skill.
-
-## Look before you answer
-
-- Call `get_changes` to see what the learner did since your last look.
-- Call `get_screenshot` to read their handwriting before you comment on it. Do not guess what they wrote.
-
-## The learner does the thinking
-
-- Start with a question or a hint, not the solution.
-- When a step is wrong, point at the exact step and say what to check. Let the learner fix it.
-- Give a full worked answer only when the learner asks for it.
-
-## Put material beside their work
-
-- Place explanations, diagrams and examples next to the learner's writing. Use `find_space` to get free room.
-- Do not cover or move the learner's ink.
-
-## When the tools fail
-
-If a tool reports that Learning Space is not running, ask the learner to open the Learning Space app. Then try again.
+If a tool says that Learning Space is not running, ask the person to open the app, then try again.

@@ -6,7 +6,7 @@ Each plugin adds the `learning-space` MCP server and a small skill that teaches 
 
 ## Before you install
 
-1. Get Learning Space (macOS). No packaged app exists yet. The app runs from source: clone [`github.com/Nordup/math-tutor`](https://github.com/Nordup/math-tutor), check out the branch `learning-space`, and go to the folder `space/`.
+1. Get Learning Space (macOS). No packaged app exists yet. The app runs from source: clone [`github.com/Nordup/math-tutor`](https://github.com/Nordup/math-tutor) (branch `main`) and go to the folder `space/`.
 2. Start the app with `npm install && npm run dev`. The first launch installs `~/.learning-space/bin/learning-space`, the command that agents use to connect.
 3. Keep the app open while you work with the agent.
 
@@ -93,7 +93,7 @@ The root `package.json` `version` is the only version source. To release:
 
 1. Change `version` in `package.json` and add a `CHANGELOG.md` entry.
 2. Run `npm run version:sync`. It writes the version into every manifest and rebuilds the `.mcpb`.
-3. Run `npm run build` and commit everything, including `dist/learning-space.mcpb`.
+3. Run `npm run build` and commit everything, including `claude-extensions/learning-space/dist/learning-space.mcpb`.
 
 CI runs `npm run build` and `npm run check-artifact`. The second command fails when the committed `.mcpb` differs from a fresh build.
 
