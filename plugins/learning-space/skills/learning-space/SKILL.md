@@ -6,7 +6,7 @@ when_to_use: They talk about the board, the canvas or Learning Space, refer to t
 
 # Learning Space
 
-Before you work on the board, read the Learning Space brief with `get_guide({topic: "brief"})`, unless it is already in your context from the learning folder's `AGENTS.md`. It explains what the space is for, how the person and you work together, and how to think about the board.
+Before you work on the board, read the Learning Space brief with `get_brief`, unless it is already in your context from the learning folder's `AGENTS.md`. It explains what the space is for, how the person and you work together, and how to think about the board.
 
 If the folder has an `AGENTS.md`, it also describes the folder: plans, session notes, and what you know about the person.
 
