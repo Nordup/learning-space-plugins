@@ -98,6 +98,20 @@ for (const file of [".claude-plugin/marketplace.json", ".cursor-plugin/marketpla
   }
 }
 
+// The prompt hook: `learning-space news --client <label>` before each prompt. Each client gets
+// its own file (the label differs), and neither is named hooks/hooks.json, which Claude Code and
+// Codex would also load by default.
+function checkNewsHook(file, m, label) {
+  checkRelPath(file, "hooks", m.hooks);
+  if (!nonEmpty(m.hooks) || m.hooks === "./hooks/hooks.json") return fail(file, "hooks must name a client-specific file");
+  const hookFile = `${PLUGIN}/${m.hooks.slice(2)}`;
+  const entries = read(hookFile).hooks?.UserPromptSubmit;
+  const command = Array.isArray(entries) ? entries[0]?.hooks?.[0]?.command : undefined;
+  if (!nonEmpty(command) || !command.includes(RELAY) || !command.includes(`news --client "${label}"`) || !command.endsWith("|| true")) {
+    fail(hookFile, `UserPromptSubmit must run ${RELAY} news --client "${label}" ... || true`);
+  }
+}
+
 // --- Claude Code -------------------------------------------------------------
 
 {
@@ -106,6 +120,7 @@ for (const file of [".claude-plugin/marketplace.json", ".cursor-plugin/marketpla
   checkCommon(file, m);
   checkRelPath(file, "mcpServers", m.mcpServers);
   stdioServer("mcp.claude.json", read(`${PLUGIN}/mcp.claude.json`).mcpServers, "${HOME}");
+  checkNewsHook(file, m, "Claude Code");
 }
 
 // --- Codex -------------------------------------------------------------------
@@ -132,6 +147,7 @@ for (const file of [".claude-plugin/marketplace.json", ".cursor-plugin/marketpla
   }
   const server = read(`${PLUGIN}/mcp.codex.json`).mcpServers?.[NAME];
   if (server?.type !== "http" || server?.url !== MCP_URL) fail("mcp.codex.json", `server must be http ${MCP_URL}`);
+  checkNewsHook(file, m, "Codex");
 }
 
 // --- Agent Plugins (plugin.json + mcp.json at the plugin root) ---------------

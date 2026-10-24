@@ -21,6 +21,7 @@
   ],
   "skills": "./skills/",
   "mcpServers": "./mcp.codex.json",
+  "hooks": "./hooks/codex.json",
   "interface": {
     "displayName": "Learning Space",
     "shortDescription": "Teach on a shared canvas where the learner writes by hand.",

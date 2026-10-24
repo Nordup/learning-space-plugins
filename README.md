@@ -32,6 +32,22 @@ claude plugin install learning-space@learning-space
 
 Then restart Claude Code, or run `/reload-plugins`. Inside Claude Code, `/plugin marketplace add Nordup/learning-space-plugins` and `/plugin install learning-space@learning-space` do the same. On Claude Code 2.1.275 or later, one command does both: `/plugin install learning-space --marketplace Nordup/learning-space-plugins`.
 
+### Board news hook
+
+The Claude Code and Codex plugins run `~/.learning-space/bin/learning-space news --client "<agent>"` before each prompt (a `UserPromptSubmit` hook). When the learner drew or erased strokes that this agent app has not seen since its last look, the command prints one line, for example `Board news: since your last look at "Stars" (2 min ago) the learner drew 9 strokes: ink group g12 (280×210 at 310, -40) right of your SVG "Thermal spectra". …`. The agent gets this line with the prompt. When nothing is new or the app is closed, the command prints nothing.
+
+To add the hook by hand (without the plugin), put this in `~/.codex/hooks.json` or `~/.claude/settings.json`, and use `"Claude Code"` as the client for Claude Code:
+
+```json
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "\"$HOME/.learning-space/bin/learning-space\" news --client \"Codex\" 2>/dev/null || true", "timeout": 5 }] }
+    ]
+  }
+}
+```
+
 ### ChatGPT and Codex
 
 The ChatGPT desktop app and Codex CLI share one setup.
@@ -42,6 +58,8 @@ codex plugin add learning-space@learning-space
 ```
 
 Then restart the ChatGPT app or Codex. You can also install **Learning Space** from `/plugins` in Codex, or from Settings → Plugins in the ChatGPT app.
+
+Codex runs a plugin's hooks only after you trust them: run `/hooks` in Codex and trust the Learning Space `UserPromptSubmit` hook. Without it, Codex works as before, but the board news does not reach your prompts.
 
 ### Claude Desktop (Chat tab)
 
