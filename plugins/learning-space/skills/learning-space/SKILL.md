@@ -8,6 +8,8 @@ when_to_use: They talk about the board, the canvas or Learning Space, refer to t
 
 Before you work on the board, read the Learning Space brief with `get_brief`, unless it is already in your context from the learning folder's `AGENTS.md`. It explains what the space is for, how the person and you work together, and how to think about the board.
 
+The technical reference for writing on the board (the HTML subset and its styles, math, SVG, images, colour tokens, placement, ink) is `get_guide`, in topics; its description lists them, and one call with a topic returns one.
+
 If the folder has an `AGENTS.md`, it also describes the folder: plans, session notes, and what you know about the person.
 
 If a tool says that Learning Space is not running, ask the person to open the app, then try again.
