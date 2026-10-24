@@ -34,7 +34,7 @@ Then restart Claude Code, or run `/reload-plugins`. Inside Claude Code, `/plugin
 
 ### Board news hook
 
-The Claude Code and Codex plugins run `~/.learning-space/bin/learning-space news --client "<agent>"` before each prompt (a `UserPromptSubmit` hook). When the learner drew or erased strokes that this agent app has not seen since its last look, the command prints one line, for example `Board news: since your last look at "Stars" (2 min ago) the learner drew 9 strokes: ink group g12 (280×210 at 310, -40) right of your SVG "Thermal spectra". …`. The agent gets this line with the prompt. When nothing is new or the app is closed, the command prints nothing.
+The Claude Code and Codex plugins run `~/.learning-space/bin/learning-space news --client "<agent>"` before each prompt (a `UserPromptSubmit` hook). When the learner drew or erased strokes since this agent app's last look or last board news, the command prints one line, for example `Board news for "Stars", since your last look or news 2 min ago: the learner drew 9 strokes: ink group g12 (280×210 at 310, -40) right of your SVG "Thermal spectra". The last change was 40 s ago.` The agent gets this line with the prompt. Each change is in the news once: after the hook printed it, the app does not repeat it in tool results. When nothing is new or the app is closed, the command prints nothing.
 
 To add the hook by hand (without the plugin), put this in `~/.codex/hooks.json` or `~/.claude/settings.json`, and use `"Claude Code"` as the client for Claude Code:
 
