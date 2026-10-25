@@ -6,10 +6,10 @@ when_to_use: They talk about the board, the canvas or Learning Space, refer to t
 
 # Learning Space
 
-Before you work on the board, read the Learning Space brief with `get_brief`, unless it is already in your context from the learning folder's `AGENTS.md`. It explains what the space is for, how the person and you work together, and how to think about the board.
+Learning Space is a shared board where the person learns with you: they write and draw by hand, and you see the board and draw on it.
 
-You write on the board with scenes (`run_scene`): programs that draw, write, place pages and images, and animate, with living code items and interaction. The technical reference is `get_guide`, in topics (the topic `scene` first; the HTML subset and its styles, math, SVG, images, colour tokens, placement, ink); its description lists them, and one call with a topic returns one.
+Before you work on the board, read the Learning Space brief with `get_brief`, unless it is already in your context from the learning folder's `AGENTS.md`. It explains what the space is for and how to explain on the board.
 
-If the folder has an `AGENTS.md`, it also describes the folder: plans, session notes, and what you know about the person.
-
-If a tool says that Learning Space is not running, ask the person to open the app, then try again.
+- Everything you put on the board goes through a scene (`run_scene`). Read `get_guide` topic "scene" before your first scene; the `get_guide` description lists the other topics.
+- If the folder has an `AGENTS.md`, it also describes the folder: plans, session notes and what you know about the person.
+- If a tool says that Learning Space is not running, ask the person to open the app, then try again.
