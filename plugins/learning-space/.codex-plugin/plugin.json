@@ -25,7 +25,7 @@
   "interface": {
     "displayName": "Learning Space",
     "shortDescription": "Teach on a shared canvas where the learner writes by hand.",
-    "longDescription": "Learning Space is a local desktop canvas for learning. The learner writes and draws by hand; with this plugin, Codex sees the board, places explanations and diagrams beside the learner's work, and checks each step. Codex gives hints and questions first, so the learner does the thinking. The app runs on your Mac and keeps your work in a local folder.",
+    "longDescription": "Learning Space is a local desktop canvas for learning. The learner writes and draws by hand; with this plugin, Codex sees the board, places explanations and diagrams beside the learner's work, and checks each step. Codex reads what the learner wants: a hint, an explanation, material or a second opinion on their drawing. The app runs on your Mac and keeps your work in a local folder.",
     "developerName": "Nordup",
     "category": "Education",
     "capabilities": [

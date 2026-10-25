@@ -3,12 +3,12 @@ Learning Space is a shared canvas for learning on your Mac. You write and draw b
 **What the plugin adds**
 
 - The `learning-space` MCP server, so the agent can read the board, take screenshots, write notes and diagrams, and draw ink.
-- A `learning-space` skill that teaches the agent to look before it answers, to give hints before solutions, and to put material beside your work.
+- A `learning-space` skill that tells the agent to read the Learning Space brief (`get_brief`), where to find the board reference (`get_guide`), and what to do when the app is not running.
 
 **Prerequisites**
 
 - macOS.
-- Learning Space opened once. No packaged app exists yet: run it from source (`github.com/Nordup/math-tutor`, branch `learning-space`, folder `space/`, `npm install && npm run dev`). The first launch installs the `~/.learning-space/bin/learning-space` command that agents use to connect.
+- Learning Space opened once. No packaged app exists yet: run it from source (`github.com/Nordup/math-tutor`, branch `main`, folder `space/`, `npm install && npm run dev`). The first launch installs the `~/.learning-space/bin/learning-space` command that agents use to connect.
 - Keep the app open while you work. If it is closed, the agent asks you to open it.
 
 **Install**
