@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- The skill says scenes (`run_scene`) are the one way to write. Needs a Learning Space app with stage 4 (the direct write tools are retired).
 - The skill names scenes (programs that draw and animate on the board, with living code items) first in the board reference. Needs a Learning Space app with `run_scene`.
 - The skill reads the brief with `get_brief` and names `get_guide` as the board reference, in topics (the app now has two tools, one job each: `get_brief` for the brief, `get_guide` for the reference). Needs a Learning Space app with `get_brief`.
 - Board news before each prompt: the Claude Code and Codex plugins add a `UserPromptSubmit` hook (`hooks/claude.json`, `hooks/codex.json`) that runs `~/.learning-space/bin/learning-space news --client <agent>`. It adds one line to the prompt when the learner drew or erased strokes since this agent app's last look or last board news; each change is delivered once. It prints nothing when nothing is new or the app is closed. Needs a Learning Space app with the `news` command.
