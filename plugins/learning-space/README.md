@@ -3,7 +3,7 @@ Learning Space is a shared canvas for learning on your Mac. You write and draw b
 **What the plugin adds**
 
 - The `learning-space` MCP server, so the agent can read the board, take screenshots, write notes and diagrams, and draw ink.
-- A `learning-space` skill that tells the agent to read the Learning Space brief (`get_brief`), where to find the board reference (`get_guide`), and what to do when the app is not running.
+- A `learning-space` skill that tells the agent to read the Learning Space brief (`get_brief`), where to find the board reference (`get_guide`, with scenes first: programs that draw and animate on the board), and what to do when the app is not running.
 
 **Prerequisites**
 
