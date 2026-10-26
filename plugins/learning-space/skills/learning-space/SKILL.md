@@ -10,6 +10,6 @@ Learning Space is a shared board where the person learns with you: they write an
 
 Before you work on the board, read the Learning Space brief with `get_brief`, unless it is already in your context from the learning folder's `AGENTS.md`. It explains what the space is for and how to explain on the board.
 
-- Everything you put on the board goes through a scene (`run_scene`). Read `get_guide` topic "scene" before your first scene; the `get_guide` description lists the other topics.
+- Everything you put on the board goes through a scene: `write_scene` makes a draft, `preview_scene` shows it to you, and `play_scene` plays it for the learner. Read `get_guide` topic "scene" before your first scene; the `get_guide` description lists the other topics.
 - If the folder has an `AGENTS.md`, it also describes the folder: plans, session notes and what you know about the person.
 - If a tool says that Learning Space is not running, ask the person to open the app, then try again.
