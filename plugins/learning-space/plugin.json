@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "learning-space",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Teach on a shared canvas: the agent sees the learner's handwriting and draws, explains and checks work in Learning Space.",
   "author": {
     "name": "Nordup",

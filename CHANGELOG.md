@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.1
 
 - The skill says scenes are the one way to write: `write_scene` makes a draft, `preview_scene` shows it, and `play_scene` plays it for the learner. Needs a Learning Space app with these three tools (decision T16; `run_scene` and `scene_control` are gone).
 - The skill names scenes (programs that draw and animate on the board, with living code items) first in the board reference. Needs a Learning Space app with the scene tools.

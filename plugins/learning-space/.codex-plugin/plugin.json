@@ -1,6 +1,6 @@
 {
   "name": "learning-space",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Teach on a shared canvas: Codex sees the learner's handwriting and draws, explains and checks work in Learning Space.",
   "author": {
     "name": "Nordup",
