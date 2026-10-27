@@ -7,7 +7,7 @@ Each plugin adds the `learning-space` MCP server and a small skill that teaches 
 ## Before you install
 
 1. Get Learning Space (macOS). No packaged app exists yet. The app runs from source: clone [`github.com/Nordup/math-tutor`](https://github.com/Nordup/math-tutor) (branch `main`) and go to the folder `space/`.
-2. Start the app with `npm install && npm run dev`. The first launch installs `~/.learning-space/bin/learning-space`, the command that agents use to connect.
+2. Start the app with `npm install && npm run dev`. Each launch writes `~/.learning-space/bin/learning-space`, the command that agents use to connect.
 3. Keep the app open while you work with the agent.
 
 If you already added the server by hand (`claude mcp add learning-space …` or `codex mcp add learning-space …`), remove that entry first. Otherwise the agent sees every tool twice.
@@ -34,9 +34,9 @@ Then restart Claude Code, or run `/reload-plugins`. Inside Claude Code, `/plugin
 
 ### Board news hook
 
-The Claude Code and Codex plugins run `~/.learning-space/bin/learning-space news --client "<agent>"` before each prompt (a `UserPromptSubmit` hook). When the learner drew, erased, moved, resized or deleted something since this agent app's last look or last board news, the command prints one line, for example `Board news for "Stars", since your last look or news 2 min ago: the learner drew 9 strokes: ink group g12 (280×210 at 310, -40) right of your SVG "Thermal spectra". The last change was 40 s ago.` The agent gets this line with the prompt. Each change is in the news once: after the hook printed it, the app does not repeat it in tool results. When nothing is new or the app is closed, the command prints nothing.
+The Claude Code and Codex plugins run `~/.learning-space/bin/learning-space news --client "<agent>"` before each prompt (a `UserPromptSubmit` hook). When the learner changed something on the board since this agent app's last look or last board news, the command prints one line, for example `Board news for "Stars", since your last look or news 2 min ago: the learner drew 9 strokes: ink group g12 (310,-40 280×210) right of your svg "Thermal spectra". The last change was 40 s ago.` The agent gets this line with the prompt. Each change is in the news once: after the hook printed it, the app does not repeat it in tool results. When nothing is new or the app is closed, the command prints nothing.
 
-To add the hook by hand (without the plugin), put this in `~/.codex/hooks.json` or `~/.claude/settings.json`, and use `"Claude Code"` as the client for Claude Code:
+To add the hook by hand (without the plugin), put this in `~/.codex/hooks.json` or `~/.claude/settings.json`. The example is for Codex; for Claude Code, use `"Claude Code"` as the client:
 
 ```json
 {
