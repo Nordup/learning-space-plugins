@@ -1,6 +1,6 @@
 # Learning Space agent plugins
 
-Plugins that connect your AI agent to Learning Space, a shared canvas on your Mac. You write by hand. The agent sees the board, draws, explains and checks your work.
+Plugins that connect your AI agent to Learning Space, a shared canvas on your Mac. You talk with the agent, and it explains on the board with drawings and animations. You can also write and draw on the board; the agent sees it and checks your work.
 
 Each plugin adds the `learning-space` MCP server and a small skill that teaches the agent how to work on the board. See [plugins/learning-space/README.md](plugins/learning-space/README.md) for what the plugin does and for example prompts.
 
