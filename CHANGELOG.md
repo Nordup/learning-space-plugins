@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- Codex gets every tool description and the server instructions whole, and runs the board news hook: the plugin no longer has the root Agent Plugins manifest (`plugin.json`, `mcp.json`), which made Codex cut them at 1,000 bytes and skip hooks. Codex reads `.codex-plugin/plugin.json`.
+
 ## 0.1.1
 
 - The skill says scenes are the one way to write: `write_scene` makes a draft, `preview_scene` shows it, and `play_scene` plays it for the learner. Needs a Learning Space app with these three tools (decision T16; `run_scene` and `scene_control` are gone).

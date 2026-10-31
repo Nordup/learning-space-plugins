@@ -115,11 +115,12 @@ The root `package.json` `version` is the only version source. To release:
 
 CI runs `npm run build` and `npm run check-artifact`. The second command fails when the committed `.mcpb` differs from a fresh build.
 
+Do not add a `plugin.json` or `mcp.json` at the plugin root. It makes the plugin an Agent Plugin, and Codex then cuts each tool description and the server instructions at 1,000 bytes and skips the hooks. `npm run build` fails if one exists.
+
 | Client | Manifest | MCP wiring |
 | --- | --- | --- |
 | Claude Code | `plugins/learning-space/.claude-plugin/plugin.json` | `mcp.claude.json` (stdio relay) |
 | Codex | `plugins/learning-space/.codex-plugin/plugin.json` | `mcp.codex.json` (HTTP) |
-| Agent Plugins | `plugins/learning-space/plugin.json` | `mcp.json` (streamable HTTP) |
 | Cursor | `plugins/learning-space/.cursor-plugin/plugin.json` | `mcp.cursor.json` (stdio relay) |
 | Claude Desktop | `claude-extensions/learning-space/manifest.json` | relay binary |
 

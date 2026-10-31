@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Validates every manifest in the repo. This is the build's check step.
-//   - JSON shape of the Claude, Codex, Cursor and Agent Plugins manifests and marketplaces
+//   - JSON shape of the Claude, Codex and Cursor manifests and marketplaces
 //   - every referenced path exists; names agree; reserved-name rules
 //   - the three MCP wirings point at the same app (port and relay command)
 //   - skill frontmatter
@@ -19,7 +19,6 @@ const NAME = "learning-space";
 const PLUGIN = "plugins/learning-space";
 const RELAY = "/.learning-space/bin/learning-space";
 const MCP_URL = "http://127.0.0.1:47821/mcp";
-const AGENT_PLUGINS = "https://agent-plugins.org/schemas/1.0.0";
 
 const errors = [];
 const fail = (where, msg) => errors.push(`${where}: ${msg}`);
@@ -150,23 +149,12 @@ function checkNewsHook(file, m, label) {
   checkNewsHook(file, m, "Codex");
 }
 
-// --- Agent Plugins (plugin.json + mcp.json at the plugin root) ---------------
+// --- No root manifest ---------------------------------------------------------
 
-{
-  const file = `${PLUGIN}/plugin.json`;
-  const m = read(file);
-  checkKeys(file, m, ["$schema", "name", "version", "description", "author", "homepage", "repository", "license", "keywords", "extensions"]);
-  if (m.$schema !== `${AGENT_PLUGINS}/plugin.schema.json`) fail(file, `$schema must be ${AGENT_PLUGINS}/plugin.schema.json`);
-  checkCommon(file, m);
-  checkKeys(`${file} author`, m.author ?? {}, ["name", "email", "url"]);
-
-  const mcpFile = `${PLUGIN}/mcp.json`;
-  const mcp = read(mcpFile);
-  checkKeys(mcpFile, mcp, ["$schema", "mcpServers"]);
-  if (mcp.$schema !== `${AGENT_PLUGINS}/mcp.schema.json`) fail(mcpFile, `$schema must be ${AGENT_PLUGINS}/mcp.schema.json`);
-  const server = mcp.mcpServers?.[NAME] ?? {};
-  checkKeys(`${mcpFile} server`, server, ["type", "url", "headers"]);
-  if (server.type !== "streamable-http" || server.url !== MCP_URL) fail(mcpFile, `server must be streamable-http ${MCP_URL}`);
+// A root plugin.json with the Agent Plugins $schema makes Codex cut each tool
+// description and the server instructions at 1,000 bytes and skip the hooks.
+for (const file of [`${PLUGIN}/plugin.json`, `${PLUGIN}/mcp.json`]) {
+  if (existsSync(file)) fail(file, "must not exist: Codex reads .codex-plugin/plugin.json");
 }
 
 // --- Cursor ------------------------------------------------------------------

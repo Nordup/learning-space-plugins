@@ -18,7 +18,6 @@ const TARGETS = [
   ["plugins/learning-space/.claude-plugin/plugin.json", ["version"]],
   ["plugins/learning-space/.codex-plugin/plugin.json", ["version"]],
   ["plugins/learning-space/.cursor-plugin/plugin.json", ["version"]],
-  ["plugins/learning-space/plugin.json", ["version"]],
   ["claude-extensions/learning-space/manifest.json", ["version"]],
 ];
 
